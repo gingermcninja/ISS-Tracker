@@ -34,6 +34,7 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.mapView.delegate = self
         let service:WebService = WebService()
         service.getCurrentLocation { (apiData, apiError) -> Void in
             print(apiData)
@@ -52,8 +53,26 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        if let annotation = annotation as? MKPointAnnotation {
+            let identifier = "pin"
+            var view: MKPinAnnotationView
+            if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
+                as? MKPinAnnotationView {
+                    dequeuedView.annotation = annotation
+                    view = dequeuedView
+            } else {
+                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                view.canShowCallout = true
+                view.calloutOffset = CGPoint(x: -5, y: 5)
+                view.rightCalloutAccessoryView = UIButton(type:.DetailDisclosure) as UIView
 
-
+            }
+            return view
+        }
+        return nil
+    }
 }
+
 
 
