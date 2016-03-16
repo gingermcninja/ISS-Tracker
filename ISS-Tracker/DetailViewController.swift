@@ -25,6 +25,7 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
         let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2DMake(position.latitude, position.longitude)
         let mapAnnotation:MKPointAnnotation = MKPointAnnotation()
         mapAnnotation.coordinate = coordinate
+        mapAnnotation.title  = "Lat: "+String(format:"%.3f",position.latitude)+", Long: "+String(format:"%.3f",position.longitude)
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.mapView.addAnnotation(mapAnnotation)
             self.mapView.centerCoordinate = coordinate
@@ -71,6 +72,10 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
             return view
         }
         return nil
+    }
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        //Add functionality to retrieve and show next pass here
     }
 }
 
