@@ -7,32 +7,44 @@
 //
 
 import UIKit
+import MapKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, MKMapViewDelegate {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
 
-
-    var detailItem: AnyObject? {
+    var detailItem: Position? {
         didSet {
-            // Update the view.
-            self.configureView()
-        }
-    }
-
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
+            if let position = detailItem {
+                self.showPositionOnMap(position)
             }
         }
+    }
+    
+    func showPositionOnMap(position:Position) {
+        let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2DMake(position.latitude, position.longitude)
+        let mapAnnotation:MKPointAnnotation = MKPointAnnotation()
+        mapAnnotation.coordinate = coordinate
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.mapView.addAnnotation(mapAnnotation)
+            self.mapView.centerCoordinate = coordinate
+        })
+
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
+        let service:WebService = WebService()
+        service.getCurrentLocation { (apiData, apiError) -> Void in
+            print(apiData)
+            do {
+                let position:Position =  try Position.decode(apiData!["iss_position"]!)
+                self.detailItem = position
+                self.showPositionOnMap(position)
+            } catch {
+                print(error)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,5 +53,7 @@ class DetailViewController: UIViewController {
     }
 
 
+
 }
+
 

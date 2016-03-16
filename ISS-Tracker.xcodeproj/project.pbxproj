@@ -14,6 +14,14 @@
 		6802AA481C99ACC6006EC0D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6802AA471C99ACC6006EC0D8 /* Assets.xcassets */; };
 		6802AA4B1C99ACC6006EC0D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6802AA491C99ACC6006EC0D8 /* LaunchScreen.storyboard */; };
 		6802AA561C99ACC6006EC0D8 /* ISS_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6802AA551C99ACC6006EC0D8 /* ISS_TrackerTests.swift */; };
+		6802AA611C99ADE9006EC0D8 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6802AA601C99ADE9006EC0D8 /* WebService.swift */; };
+		6802AA631C99B2D5006EC0D8 /* Pass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6802AA621C99B2D5006EC0D8 /* Pass.swift */; };
+		6802AA651C99B39A006EC0D8 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6802AA641C99B39A006EC0D8 /* Position.swift */; };
+		6802AA681C99BB0B006EC0D8 /* Decodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6802AA661C99BB0B006EC0D8 /* Decodable.framework */; };
+		6802AA691C99EEF7006EC0D8 /* Decodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6802AA661C99BB0B006EC0D8 /* Decodable.framework */; };
+		6802AA6A1C99EEF7006EC0D8 /* Decodable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6802AA661C99BB0B006EC0D8 /* Decodable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6802AA6D1C99F3B5006EC0D8 /* PositionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6802AA6C1C99F3B5006EC0D8 /* PositionTableViewCell.swift */; };
+		6802AA6E1C99F3B5006EC0D8 /* PositionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6802AA6C1C99F3B5006EC0D8 /* PositionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +33,20 @@
 			remoteInfo = "ISS-Tracker";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6802AA6B1C99EEF7006EC0D8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6802AA6A1C99EEF7006EC0D8 /* Decodable.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6802AA3B1C99ACC6006EC0D8 /* ISS-Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ISS-Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +60,11 @@
 		6802AA511C99ACC6006EC0D8 /* ISS-TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ISS-TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6802AA551C99ACC6006EC0D8 /* ISS_TrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISS_TrackerTests.swift; sourceTree = "<group>"; };
 		6802AA571C99ACC6006EC0D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6802AA601C99ADE9006EC0D8 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		6802AA621C99B2D5006EC0D8 /* Pass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pass.swift; sourceTree = "<group>"; };
+		6802AA641C99B39A006EC0D8 /* Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		6802AA661C99BB0B006EC0D8 /* Decodable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Decodable.framework; path = Carthage/Build/iOS/Decodable.framework; sourceTree = "<group>"; };
+		6802AA6C1C99F3B5006EC0D8 /* PositionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6802AA691C99EEF7006EC0D8 /* Decodable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6802AA681C99BB0B006EC0D8 /* Decodable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +93,7 @@
 				6802AA3D1C99ACC6006EC0D8 /* ISS-Tracker */,
 				6802AA541C99ACC6006EC0D8 /* ISS-TrackerTests */,
 				6802AA3C1C99ACC6006EC0D8 /* Products */,
+				6802AA661C99BB0B006EC0D8 /* Decodable.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,10 +112,14 @@
 				6802AA3E1C99ACC6006EC0D8 /* AppDelegate.swift */,
 				6802AA401C99ACC6006EC0D8 /* MasterViewController.swift */,
 				6802AA421C99ACC6006EC0D8 /* DetailViewController.swift */,
+				6802AA6C1C99F3B5006EC0D8 /* PositionTableViewCell.swift */,
 				6802AA441C99ACC6006EC0D8 /* Main.storyboard */,
+				6802AA601C99ADE9006EC0D8 /* WebService.swift */,
 				6802AA471C99ACC6006EC0D8 /* Assets.xcassets */,
 				6802AA491C99ACC6006EC0D8 /* LaunchScreen.storyboard */,
 				6802AA4C1C99ACC6006EC0D8 /* Info.plist */,
+				6802AA621C99B2D5006EC0D8 /* Pass.swift */,
+				6802AA641C99B39A006EC0D8 /* Position.swift */,
 			);
 			path = "ISS-Tracker";
 			sourceTree = "<group>";
@@ -109,6 +143,7 @@
 				6802AA371C99ACC6006EC0D8 /* Sources */,
 				6802AA381C99ACC6006EC0D8 /* Frameworks */,
 				6802AA391C99ACC6006EC0D8 /* Resources */,
+				6802AA6B1C99EEF7006EC0D8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -202,8 +237,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6802AA6D1C99F3B5006EC0D8 /* PositionTableViewCell.swift in Sources */,
 				6802AA431C99ACC6006EC0D8 /* DetailViewController.swift in Sources */,
 				6802AA411C99ACC6006EC0D8 /* MasterViewController.swift in Sources */,
+				6802AA651C99B39A006EC0D8 /* Position.swift in Sources */,
+				6802AA611C99ADE9006EC0D8 /* WebService.swift in Sources */,
+				6802AA631C99B2D5006EC0D8 /* Pass.swift in Sources */,
 				6802AA3F1C99ACC6006EC0D8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6802AA6E1C99F3B5006EC0D8 /* PositionTableViewCell.swift in Sources */,
 				6802AA561C99ACC6006EC0D8 /* ISS_TrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +373,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "ISS-Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gingermcninja.ISS-Tracker";
@@ -344,6 +388,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "ISS-Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gingermcninja.ISS-Tracker";
@@ -355,6 +403,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "ISS-TrackerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gingermcninja.ISS-TrackerTests";
@@ -367,6 +419,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "ISS-TrackerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gingermcninja.ISS-TrackerTests";
@@ -394,6 +450,7 @@
 				6802AA5C1C99ACC6006EC0D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6802AA5D1C99ACC6006EC0D8 /* Build configuration list for PBXNativeTarget "ISS-TrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +459,7 @@
 				6802AA5F1C99ACC6006EC0D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
